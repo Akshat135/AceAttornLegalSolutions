@@ -43,10 +43,10 @@
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: var(--e-global-color-primary);
   margin-bottom: 30px;
   font-weight: 600;
   margin-left: 9px;
+  color:aliceblue
 }
 
 .hero-description {

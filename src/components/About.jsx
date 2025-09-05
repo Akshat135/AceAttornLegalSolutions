@@ -103,10 +103,12 @@ const About = () => {
       <section className="about-hero">
         <div className="container">
           <div className="hero-content">
-            <h1>About AceAttorn</h1>
-            <p className="hero-subtitle">
+            <h1>About AceAttorn
+              <p className="hero-subtitle">
               Innovative Legal Solutions for Modern Businesses
             </p>
+            </h1>
+            
             {/* <p className="hero-description">
               For over 25 years, SAK Legal & Associates has been a trusted name
               in legal services, providing comprehensive solutions to
