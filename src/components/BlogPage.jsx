@@ -1,41 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';  //when using blog cards import usestate
 import './BlogPage.css';
 
-const dummyBlogs = [
-  {
-    id: 1,
-    title: 'Networking & Services',
-    content: 'This is a blog about networking and services. More technical insights will be provided here...',
-  },
-  {
-    id: 2,
-    title: 'Legal Basics for Startups',
-    content: 'Understand the basic legal structure and compliance needs for your startup.',
-  },
-  {
-    id: 3,
-    title: 'Your Rights as an Employee',
-    content: 'A comprehensive look at employment law and how it protects you.',
-  },
-];
+// const dummyBlogs = [
+//   {
+//     id: 1,
+//     title: 'Networking & Services',
+//     content: 'This is a blog about networking and services. More technical insights will be provided here...',
+//   },
+//   {
+//     id: 2,
+//     title: 'Legal Basics for Startups',
+//     content: 'Understand the basic legal structure and compliance needs for your startup.',
+//   },
+//   {
+//     id: 3,
+//     title: 'Your Rights as an Employee',
+//     content: 'A comprehensive look at employment law and how it protects you.',
+//   },
+// ];
 
 export default function BlogPage() {
-  const [blogs, setBlogs] = useState(dummyBlogs);
-  const [showEditor, setShowEditor] = useState(false);
-  const [modalBlog, setModalBlog] = useState(null);
+  // const [blogs, setBlogs] = useState(dummyBlogs);
+  // const [showEditor, setShowEditor] = useState(false);
+  // const [modalBlog, setModalBlog] = useState(null);
 
   // Secret key to reveal editor
-  useEffect(() => {
-    let typed = '';
-    const handleKeyDown = (e) => {
-      typed += e.key;
-      if (typed.toLowerCase().includes('aceattorn')) {
-        setShowEditor(true);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  // useEffect(() => {
+  //   let typed = '';
+  //   const handleKeyDown = (e) => {
+  //     typed += e.key;
+  //     if (typed.toLowerCase().includes('aceattorn')) {
+  //       setShowEditor(true);
+  //     }
+  //   };
+  //   window.addEventListener('keydown', handleKeyDown);
+  //   return () => window.removeEventListener('keydown', handleKeyDown);
+  // }, []);
 
   // ✅ Instagram script (Fouita)
   useEffect(() => {
@@ -61,33 +61,33 @@ export default function BlogPage() {
   }, []);
 
   // Blog actions
-  const addBlog = () => {
-    const title = prompt('Enter blog title:');
-    const content = prompt('Enter blog content:');
-    if (title && content) {
-      const newBlog = { id: Date.now(), title, content };
-      setBlogs([...blogs, newBlog]);
-    }
-  };
+  // const addBlog = () => {
+  //   const title = prompt('Enter blog title:');
+  //   const content = prompt('Enter blog content:');
+  //   if (title && content) {
+  //     const newBlog = { id: Date.now(), title, content };
+  //     setBlogs([...blogs, newBlog]);
+  //   }
+  // };
 
-  const removeBlog = (id) => {
-    setBlogs(blogs.filter((b) => b.id !== id));
-  };
+  // const removeBlog = (id) => {
+  //   setBlogs(blogs.filter((b) => b.id !== id));
+  // };
 
-  const updateBlog = (id) => {
-    const updatedTitle = prompt('Enter new title:');
-    const updatedContent = prompt('Enter new content:');
-    setBlogs(
-      blogs.map((blog) =>
-        blog.id === id ? { ...blog, title: updatedTitle, content: updatedContent } : blog
-      )
-    );
-  };
+  // const updateBlog = (id) => {
+  //   const updatedTitle = prompt('Enter new title:');
+  //   const updatedContent = prompt('Enter new content:');
+  //   setBlogs(
+  //     blogs.map((blog) =>
+  //       blog.id === id ? { ...blog, title: updatedTitle, content: updatedContent } : blog
+  //     )
+  //   );
+  // };
 
   return (
     <div className="blog-page">
-      <h1 className="blog-header">Our Blogs</h1>
-      <div className="blog-container">
+      {/* <h1 className="blog-header">Our Blogs</h1> */}
+      {/* <div className="blog-container">
         {blogs.map((blog) => (
           <div className="blog-card" key={blog.id}>
             <h2>{blog.title}</h2>
@@ -101,13 +101,13 @@ export default function BlogPage() {
             )}
           </div>
         ))}
-      </div>
+      </div> */}
 
-      {showEditor && (
+      {/* {showEditor && (
         <button className="add-button" onClick={addBlog}>Add New Blog</button>
-      )}
+      )} */}
 
-      {modalBlog && (
+      {/* {modalBlog && (
         <div className="modal-overlay" onClick={() => setModalBlog(null)}>
           <div className="modal-card" onClick={(e) => e.stopPropagation()}>
             <h2>{modalBlog.title}</h2>
@@ -115,7 +115,7 @@ export default function BlogPage() {
             <button onClick={() => setModalBlog(null)}>Close</button>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* ✅ LinkedIn Newsletter Embed Section */}
       <div className="newsletter-feed">

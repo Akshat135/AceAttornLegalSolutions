@@ -18,24 +18,39 @@ const Trademark = () => {
     {
       id: 1,
       icon: <FaFileAlt />,
-      title: "Corporate Insolvency Planning",
-      description: "Provide advisory services for corporate insolvency and restructuring.",
-      features: ["Registration assistance", "Renewal reminders", "Documentation management", "Legal compliance"]
+      title: "Business Structure Advisory",
+      description: "Guidance on choosing the right entity",
+      features: ["Private Limited", "LLP", "OPC", "Partnership"]
     },
     {
       id: 2,
       icon: <FaGavel />,
-      title: "Legal Representation",
-      description: "Represent your business in legal matters, including litigation and arbitration.",
-      features: ["Opposition proceedings", "Infringement litigation", "Legal representation", "Settlement negotiation"]
+      title: "Name Approval & Registration",
+      description:"Secure name reservation and complete MCA incorporation filings.",
+      features: ["Name","Reservation","Verification","Filing"]
     },
     {
       id: 3,
-      icon: <FaEye />,
-      title: "Debt Recovery",
-      description: "Assist with the recovery of outstanding debts through legal means.",
-      features: ["24/7 monitoring", "Infringement alerts", "Market surveillance", "Enforcement action"]
+      icon: <FaCertificate />,
+      title: "Drafting Legal Documents",
+      description: "Prepare and file MOA, AOA, LLP Agreement, and other incorporation documents.",
+      features: ["MOA","AOA","Agreements","Documents"]
     },
+    {
+      id: 4,
+      icon: <FaEye />,
+      title: "Regulatory Registrations",
+      description: "Assistance with PAN, TAN, GST, and mandatory compliances.",
+      features: ["PAN","TAN","GST","Compliance"]
+    },
+    {
+      id: 5,
+      icon: <FaHandshake />,
+      title: "Post-Incorporation Support",
+      description: "Guidance on opening bank accounts and fulfilling initial compliance requirements.",
+      features: ["Banking","Guidance","Steup","Compliance"]
+    },
+    
   ];
 
 
@@ -45,13 +60,13 @@ const Trademark = () => {
       <section className="trademark-hero">
         <div className="container">
           <div className="hero-content">
-            <div className="trademark-icon-hero">
+            {/* <div className="trademark-icon-hero">
               <FaShieldAlt />
-            </div>
-            <h1>TRADEMARK</h1>
-            <p className="hero-subtitle">
+            </div> */}
+            <h1>Company Incorporation</h1>
+            {/* <p className="hero-subtitle">
               Protect Your Brand Identity with Professional Trademark Services
-            </p>
+            </p> */}
             <p className="hero-description">
               {/* Secure your intellectual property rights with our comprehensive trademark services. 
               From initial searches to registration and ongoing protection, we ensure your brand 

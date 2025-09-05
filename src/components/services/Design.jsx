@@ -45,13 +45,13 @@ const Trademark = () => {
       <section className="trademark-hero">
         <div className="container">
           <div className="hero-content">
-            <div className="trademark-icon-hero">
+            {/* <div className="trademark-icon-hero">
               <FaShieldAlt />
-            </div>
+            </div> */}
             <h1>Design Services</h1>
-            <p className="hero-subtitle">
+            {/* <p className="hero-subtitle">
               Protect Your Brand Identity with Professional Trademark Services
-            </p>
+            </p> */}
             <p className="hero-description">
               {/* Secure your intellectual property rights with our comprehensive trademark services. 
               From initial searches to registration and ongoing protection, we ensure your brand 

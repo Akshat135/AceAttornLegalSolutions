@@ -28,7 +28,7 @@ const Footer = () => {
     { title: "Copyright Services", href: "/copyright" },
     { title: "Design Services", href: "/design" },
     { title: "Legal Contract Services", href: "/legalContract" },
-    { title: "Company in Corporation", href: "/corporate" },
+    { title: "Company Incorporation", href: "/corporate" },
     { title: "Consultation Services", href: "/consultation" },
 
   ];

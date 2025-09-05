@@ -1,5 +1,6 @@
-import React from "react";
+import React from "react"; 
 import founder from '../assets/founder.jpg';
+import f2 from '../assets/f2.jpg';
 import {
   FaUsers,
   FaCertificate,
@@ -24,36 +25,13 @@ const About = () => {
     },
     {
       id: 2,
-      name: "Advocate Amit Saklikar",
-      position: "Partner",
-      education: "LL.M., Government Law College",
-      experience: "15+ Years",
-      specialization: "Real Estate Law, Property Disputes",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=300&h=300&fit=crop&crop=face",
-      bio: `Amit brings modern legal practices and innovative solutions to complex real estate matters. His expertise in property law has helped hundreds of clients navigate successful transactions.`,
-    },
-    {
-      id: 3,
-      name: "Advocate Pallavi Saklikar",
-      position: "Partner",
-      education: "LL.B., Pune University",
-      experience: "12+ Years",
-      specialization: "Family Law, Women's Rights",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b890?ixlib=rb-4.0.3&w=300&h=300&fit=crop&crop=face",
-      bio: `Pallavi is passionate about family law and women's rights. Her empathetic approach combined with strong legal acumen has made her a trusted advocate for sensitive family matters.`,
-    },
-    {
-      id: 4,
-      name: "Advocate Durgaprasad Sabnis",
-      position: "Senior Associate",
-      education: "LL.B., Mumbai University",
-      experience: "10+ Years",
-      specialization: "Criminal Law, Employment Law",
-      image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&w=300&h=300&fit=crop&crop=face",
-      bio: `Durgaprasad specializes in criminal defense and employment law. His meticulous preparation and courtroom skills have earned him recognition among peers and clients alike.`,
+      name: "Advocate Rudhira Patil",
+      position: "trademark Attorney & Legal Associate",
+      education: "M.Coom, LL.B.",
+      experience: "2 Years",
+      specialization: "Trademark Law",
+      image:f2,
+      bio: `Rudhira Patil is a dedicated legal associate specializing in trademark law. With a strong academic background in commerce and law, she brings valuable insight into brand protection and intellectual property matters. Her focus is on assisting startups and businesses in safeguarding their trademarks and navigating the legal processes with clarity and efficiency.`,
     },
   ];
 
@@ -317,14 +295,11 @@ const About = () => {
               <div className="testimonial-card">
                 <FaQuoteLeft className="quote-icon" />
                 <p>
-                  "SAK Legal & Associates has been our trusted legal partner for
-                  over 10 years. Their expertise, professionalism, and
-                  dedication to our success have been invaluable to our business
-                  growth."
+                  "Aceattorn Legal Solutions handled our trademark infringement case with professionalism and expertise. Their clear guidance and strong strategies safeguarded our brand."
                 </p>
                 <div className="testimonial-author">
-                  <strong>Rajesh Kumar</strong>
-                  <span>CEO, Kumar Industries</span>
+                  <strong>Sanket Shikhar</strong>
+                  <span>A2G Lifecare India Private Limited</span>
                 </div>
               </div>
             </div>

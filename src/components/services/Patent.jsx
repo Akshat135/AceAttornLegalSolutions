@@ -52,9 +52,9 @@ const Trademark = () => {
       <section className="trademark-hero">
         <div className="container">
           <div className="hero-content">
-            <div className="trademark-icon-hero">
+            {/* <div className="trademark-icon-hero">
               <FaShieldAlt />
-            </div>
+            </div> */}
             <h1>Patent Services</h1>
             <p className="hero-subtitle">
               {/* Protect Your Brand Identity with Professional Trademark Services */}
