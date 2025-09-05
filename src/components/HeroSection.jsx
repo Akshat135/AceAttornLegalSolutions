@@ -3,6 +3,7 @@ import { FaPlay, FaArrowRight, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react
 import './HeroSection.css';
 import hero2 from '../assets/hero2.jpg';
 import hero3 from '../assets/hero3.jpg';
+import {Link} from 'react-router-dom';
 
 
 const HeroSection = () => {
@@ -89,14 +90,14 @@ const HeroSection = () => {
                 </p>
                 
                 <div className="hero-actions">
-                  <a href="/contact" className="btn btn-primary hero-btn">
+                  <Link to="/contact" className="btn btn-primary hero-btn">
                     <FaPhone className="btn-icon" />
                     Free Consultation
-                  </a>
-                  <a href="/about" className="btn btn-secondary hero-btn">
+                  </Link>
+                  <Link to="/about" className="btn btn-secondary hero-btn">
                     Learn More
                     <FaArrowRight className="btn-icon" />
-                  </a>
+                  </Link>
                 </div>
 
                {/* <div className="hero-contact-info">

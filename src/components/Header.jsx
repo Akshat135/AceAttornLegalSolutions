@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes, FaChevronDown, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/logo.png';
 
@@ -9,67 +10,32 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleDropdownToggle = (menu) => {
-    setActiveDropdown(activeDropdown === menu ? null : menu);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const handleDropdownToggle = (menu) => setActiveDropdown(activeDropdown === menu ? null : menu);
 
   const navigationItems = [
-    { 
-      title: 'Home', 
-      href: '/' 
-    },
-    {
-      title: 'About Us',
-      href: '/about'
-      // dropdown: [
-      //   { title: 'Our Story', href: '#story' },
-      //   { title: 'Our Team', href: '#team' },
-      //   { title: 'Mission & Vision', href: '#mission' }
-      // ]
-    },
-    { 
-      title: 'Blogs', 
-      href: '/blog' 
-    },
+    { title: 'Home', to: '/' },
+    { title: 'About Us', to: '/about' },
+    { title: 'Blogs', to: '/blog' },
     {
       title: 'Services',
-      href: '#services',
+      to: '/#services',
       dropdown: [
-        { title: 'Trademark Services', href: '/trademark' },
-        { title: 'Patent Services', href: '/patent' },
-        { title: 'Copyright Services', href: '/copyright' },
-        { title: 'Design Services', href: '/design' },
-        { title: 'Legal Contract Services', href: 'legalcontract' },
-        { title: 'Company Incorporation', href: '/corporate' },
-        { title: 'Consultation Services', href: '/consultation' }
-      ]
+        { title: 'Trademark Services', to: '/trademark' },
+        { title: 'Patent Services', to: '/patent' },
+        { title: 'Copyright Services', to: '/copyright' },
+        { title: 'Design Services', to: '/design' },
+        { title: 'Legal Contract Services', to: '/legalContract' },
+        { title: 'Company Incorporation', to: '/corporate' },
+        { title: 'Consultation Services', to: '/consultation' },
+      ],
     },
-    // {
-    //   title: 'Practice Areas',
-    //   href: '#practice',
-    //   dropdown: [
-    //     { title: 'Business Law', href: '#business' },
-    //     { title: 'Employment Law', href: '#employment' },
-    //     { title: 'Intellectual Property', href: '#ip' },
-    //     { title: 'Tax Law', href: '#tax' }
-    //   ]
-    // },
-    { 
-      title: 'Contact', 
-      href: '/contact' 
-    }
+    { title: 'Contact', to: '/contact' },
   ];
 
   return (
@@ -79,14 +45,12 @@ const Header = () => {
         <div className="container">
           <div className="top-bar-content">
             <div className="contact-info">
-              <span className="contact-item">
-                <FaPhone className="icon" />
-                +91 7379902583
-              </span>
-              <span className="contact-item">
-                <FaEnvelope className="icon" />
-                info@aceattornlegalsolutions.com
-              </span>
+              <a href="tel:+917379902583" className="contact-item">
+                <FaPhone className="icon" /> +91 7379902583
+              </a>
+              <a href="mailto:info@aceattornlegalsolutions.com" className="contact-item">
+                <FaEnvelope className="icon" /> info@aceattornlegalsolutions.com
+              </a>
             </div>
             <div className="top-bar-right">
               <span>Experience. Excellence. Results.</span>
@@ -99,49 +63,40 @@ const Header = () => {
       <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container">
           <div className="header-content">
-
-
             {/* Logo */}
-            {/* <div className="logo">
-        
-              <h1>Ace Attorn Legal Solutions</h1>
-              <span className="tagline">Innovative Legal Solutions for Modern Businesses</span>
-            </div> */}
-
             <div className="logo">
-  <a href="/" className="logo-link">
-    <img src={logo} alt="Ace Attorn Logo" className="logo-img" />
-    <div className="logo-text">
-      <h1>Ace Attorn Legal Solutions</h1>
-      <span className="tagline">Innovative Legal Solutions for Modern Businesses</span>
-    </div>
-  </a>
-</div>
-
+              <Link to="/" className="logo-link">
+                <img src={logo} alt="Ace Attorn Logo" className="logo-img" />
+                <div className="logo-text">
+                  <h1>Ace Attorn Legal Solutions</h1>
+                  <span className="tagline">Innovative Legal Solutions for Modern Businesses</span>
+                </div>
+              </Link>
+            </div>
 
             {/* Desktop Navigation */}
             <nav className="desktop-nav">
               <ul className="nav-list">
                 {navigationItems.map((item, index) => (
-                  <li 
-                    key={index} 
+                  <li
+                    key={index}
                     className={`nav-item ${item.dropdown ? 'has-dropdown' : ''}`}
                     onMouseEnter={() => item.dropdown && setActiveDropdown(item.title)}
                     onMouseLeave={() => item.dropdown && setActiveDropdown(null)}
                   >
-                    <a href={item.href} className="nav-link">
+                    <Link to={item.to} className="nav-link">
                       {item.title}
                       {item.dropdown && <FaChevronDown className="dropdown-icon" />}
-                    </a>
-                    
+                    </Link>
+
                     {item.dropdown && (
                       <div className={`dropdown-menu ${activeDropdown === item.title ? 'active' : ''}`}>
                         <ul>
                           {item.dropdown.map((subItem, subIndex) => (
                             <li key={subIndex}>
-                              <a href={subItem.href} className="dropdown-link">
+                              <Link to={subItem.to} className="dropdown-link">
                                 {subItem.title}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -151,13 +106,6 @@ const Header = () => {
                 ))}
               </ul>
             </nav>
-
-            {/* CTA Button  Free consultation button*/}
-            {/* <div className="header-cta">
-              <a href="#consultation" className="btn btn-primary">
-                Free Consultation
-              </a>
-            </div> */}
 
             {/* Mobile Menu Toggle */}
             <button className="mobile-menu-toggle" onClick={toggleMenu}>
@@ -172,27 +120,30 @@ const Header = () => {
             {navigationItems.map((item, index) => (
               <li key={index} className="mobile-nav-item">
                 <div className="mobile-nav-link-wrapper">
-                  <a href={item.href} className="mobile-nav-link">
+                  <Link to={item.to} className="mobile-nav-link"  onClick={()=>setIsMenuOpen(false)} >  
                     {item.title}
-                  </a>
+                    
+                  </Link>
                   {item.dropdown && (
-                    <button 
+                    <button
                       className="mobile-dropdown-toggle"
                       onClick={() => handleDropdownToggle(item.title)}
                     >
-                      <FaChevronDown className={`dropdown-icon ${activeDropdown === item.title ? 'rotated' : ''}`} />
+                      <FaChevronDown
+                        className={`dropdown-icon ${activeDropdown === item.title ? 'rotated' : ''}`}
+                      />
                     </button>
                   )}
                 </div>
-                
+
                 {item.dropdown && (
                   <div className={`mobile-dropdown ${activeDropdown === item.title ? 'active' : ''}`}>
                     <ul>
                       {item.dropdown.map((subItem, subIndex) => (
                         <li key={subIndex}>
-                          <a href={subItem.href} className="mobile-dropdown-link">
+                          <Link to={subItem.to} className="mobile-dropdown-link" onClick={()=>setIsMenuOpen(false)}>
                             {subItem.title}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -200,11 +151,6 @@ const Header = () => {
                 )}
               </li>
             ))}
-            {/* <li className="mobile-nav-item">
-              <a href="#consultation" className="btn btn-primary mobile-cta">
-                Free Consultation
-              </a>
-            </li> */}
           </ul>
         </div>
       </header>

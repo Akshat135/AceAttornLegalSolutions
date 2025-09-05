@@ -53,3 +53,9 @@ html {
   background-size: 200px 100%;
   animation: shimmer 1.5s infinite;
 }
+
+/* App.css or each page CSS */
+.page-container {
+  min-height: calc(100vh - 200px); /* subtract header + footer height */
+}
+

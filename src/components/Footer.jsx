@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaPhone,
   FaEnvelope,
@@ -23,23 +24,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const practiceAreas = [
-    { title: "Trademark Services", href: "/trademark" },
-    { title: "Patent Services", href: "/patent" },
-    { title: "Copyright Services", href: "/copyright" },
-    { title: "Design Services", href: "/design" },
-    { title: "Legal Contract Services", href: "/legalContract" },
-    { title: "Company Incorporation", href: "/corporate" },
-    { title: "Consultation Services", href: "/consultation" },
-
+    { title: "Trademark Services", to: "/trademark" },
+    { title: "Patent Services", to: "/patent" },
+    { title: "Copyright Services", to: "/copyright" },
+    { title: "Design Services", to: "/design" },
+    { title: "Legal Contract Services", to: "/legalContract" },
+    { title: "Company Incorporation", to: "/corporate" },
+    { title: "Consultation Services", to: "/consultation" },
   ];
 
   const quickLinks = [
-    { title: "About Us", href: "/about" },
-    // { title: "Our Team", href: "#team" },
-    // { title: "Services", href: "/services" },
-    // { title: "Case Studies", href: "#cases" },
-    { title: "Blogs", href: "/blog" },
-    { title: "Contact", href: "/contact" },
+    { title: "About Us", to: "/about" },
+    { title: "Blogs", to: "/blog" },
+    { title: "Contact", to: "/contact" },
   ];
 
   return (
@@ -68,10 +65,22 @@ const Footer = () => {
                 <a href="#" className="social-link" aria-label="Twitter">
                   <FaTwitter />
                 </a>
-                <a href="https://www.linkedin.com/company/aceattorn-legal-solutions/posts/?feedView=all" className="social-link" aria-label="LinkedIn">
+                <a
+                  href="https://www.linkedin.com/company/aceattorn-legal-solutions/posts/?feedView=all"
+                  className="social-link"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaLinkedinIn />
                 </a>
-                <a href="https://www.instagram.com/aceattornlegalsolutions/" className="social-link" aria-label="Instagram">
+                <a
+                  href="https://www.instagram.com/aceattornlegalsolutions/"
+                  className="social-link"
+                  aria-label="Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaInstagram />
                 </a>
               </div>
@@ -83,9 +92,9 @@ const Footer = () => {
               <ul className="footer-links">
                 {practiceAreas.map((area, index) => (
                   <li key={index}>
-                    <a href={area.href} className="footer-link">
+                    <Link to={area.to} className="footer-link">
                       {area.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -97,9 +106,9 @@ const Footer = () => {
               <ul className="footer-links">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a href={link.href} className="footer-link">
+                    <Link to={link.to} className="footer-link">
                       {link.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -112,9 +121,14 @@ const Footer = () => {
                 <div className="contact-detail">
                   <FaMapMarkerAlt className="contact-icon" />
                   <div>
-                    <a href="https://www.google.com/maps/place/AceAttorn+Legal+Solutions/@25.3578563,82.9783862,17z/data=!3m1!4b1!4m6!3m5!1s0x6ba254da2cf86e55:0xd747fcbb3034aba1!8m2!3d25.3578563!4d82.9783862!16s%2Fg%2F11xmd190my?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D"><p>L 99, V.D.A Colony Shivpur</p>
-                    <p>Varanasi, Uttar Pradesh 221003</p> </a>
-                    
+                    <a
+                      href="https://www.google.com/maps/place/AceAttorn+Legal+Solutions/@25.3578563,82.9783862,17z/data=!3m1!4b1!4m6!3m5!1s0x6ba254da2cf86e55:0xd747fcbb3034aba1!8m2!3d25.3578563!4d82.9783862!16s%2Fg%2F11xmd190my?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <p>L 99, V.D.A Colony Shivpur</p>
+                      <p>Varanasi, Uttar Pradesh 221003</p>
+                    </a>
                   </div>
                 </div>
 
@@ -141,14 +155,6 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Emergency Contact */}
-              {/* <div className="emergency-contact">
-                <h5>24/7 Emergency Legal Assistance</h5>
-                <a href="tel:+917379902583" className="emergency-number">
-                  +91 7379902583
-                </a>
-              </div> */}
             </div>
           </div>
         </div>
@@ -160,17 +166,9 @@ const Footer = () => {
           <div className="newsletter-content">
             <div className="newsletter-text">
               <h4>Stay Updated with Legal Insights</h4>
-              <p>
-                Subscribe to our newsletter for the latest legal news and
-                updates
-              </p>
+              <p>Subscribe to our newsletter for the latest legal news and updates</p>
             </div>
             <div className="newsletter-form">
-              {/* <input 
-                type="email" 
-                placeholder="Enter your email address" 
-                className="newsletter-input"
-              /> */}
               <button
                 className="newsletter-btn"
                 onClick={() =>
@@ -192,36 +190,20 @@ const Footer = () => {
         <div className="container">
           <div className="footer-bottom-content">
             <div className="copyright">
-              <p>
-                &copy; {currentYear} AceAttorn Legal Associates. All rights
-                reserved.
-              </p>
+              <p>&copy; {currentYear} AceAttorn Legal Associates. All rights reserved.</p>
               <div className="legal-links">
-                <a href="#privacy" className="legal-link">
-                  Privacy Policy
-                </a>
-                <a href="#terms" className="legal-link">
-                  Terms of Service
-                </a>
-                <a href="#disclaimer" className="legal-link">
-                  Legal Disclaimer
-                </a>
+                <a href="#privacy" className="legal-link">Privacy Policy</a>
+                <a href="#terms" className="legal-link">Terms of Service</a>
+                <a href="#disclaimer" className="legal-link">Legal Disclaimer</a>
               </div>
             </div>
-
-            <div className="certifications">
-              {/* <span>Licensed by the Bar Council of Maharashtra</span> */}
-            </div>
+            <div className="certifications"></div>
           </div>
         </div>
       </div>
 
       {/* Scroll to Top Button */}
-      <button
-        className="scroll-to-top"
-        onClick={scrollToTop}
-        aria-label="Scroll to top"
-      >
+      <button className="scroll-to-top" onClick={scrollToTop} aria-label="Scroll to top">
         <FaArrowUp />
       </button>
     </footer>

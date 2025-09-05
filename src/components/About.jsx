@@ -10,6 +10,7 @@ import {
   FaQuoteLeft,
 } from "react-icons/fa";
 import "./About.css";
+import {Link} from 'react-router-dom'
 
 const About = () => {
   const teamMembers = [
@@ -319,9 +320,9 @@ const About = () => {
               make. Contact us today for a consultation.
             </p>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary">
+              <Link to="/contact" className="btn btn-primary">
                 Get In Touch
-              </a>
+              </Link>
               {/* <a href="/consultation" className="btn btn-secondary">
                 Free Consultation
               </a> */}

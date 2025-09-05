@@ -15,10 +15,13 @@ import Design from './components/services/Design'
 import Corporate from './components/services/Corporate'
 import Consultation from './components/services/Consultation'
 import './App.css'
+import ScrollToTop from './components/scrolltoTop'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
+      
       <div className="App">
         <Header />
         <main>
