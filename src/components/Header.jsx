@@ -200,11 +200,11 @@ const Header = () => {
                 )}
               </li>
             ))}
-            <li className="mobile-nav-item">
+            {/* <li className="mobile-nav-item">
               <a href="#consultation" className="btn btn-primary mobile-cta">
                 Free Consultation
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </header>
