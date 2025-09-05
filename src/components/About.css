@@ -638,3 +638,18 @@
     transform: translateY(0);
   }
 }
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--e-global-color-primary);
+  cursor: pointer;
+  margin: 0 10px;
+  transition: color 0.2s ease;
+}
+
+.arrow:hover {
+  color: var(--e-global-color-accent);
+}
+

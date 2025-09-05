@@ -1,4 +1,6 @@
 import React from "react"; 
+import { useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import founder from '../assets/founder.jpg';
 import f2 from '../assets/f2.jpg';
 import {
@@ -13,6 +15,47 @@ import "./About.css";
 import {Link} from 'react-router-dom'
 
 const About = () => {
+   
+  const testimonials = [
+  {
+    quote: "Aceattorn Legal Solutions handled our trademark infringement case with professionalism and expertise. Their clear guidance and strong strategies safeguarded our brand.",
+    author: "Sanket Shikhar",
+    company: "A2G Lifecare India Private Limited"
+  },
+  {
+    quote: "Our firm engaged Aceattorn Legal Solutions to address a trademark infringement matter. AceAttorn team handled the issue with utmost professionalism, providing clear guidance and effective legal strategies. Their transparent approach and commitment to safeguarding our brand gave us complete confidence throughout the process. We are highly satisfied with their services and would strongly recommend Aceattorn Legal Solutions for trademark protection and enforcement.",
+    author: "Jayprakash Vishnudas Bangad",
+    company: "Partner, M/S SRI NARSING OIL & RICE MIL"
+  },
+  {
+    quote: "Aceattorn Legal Solutions made our trademark journey effortless from mark search to successful registration. Highly professional, reliable, and startup-friendly",
+    author: "Anuj Kumar",
+    company: "Founder, Apistemology Technologies Pvt. Ltd."
+  },
+  // Add as many as you want
+];
+const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+// Auto-change every 5 seconds
+useEffect(() => {
+  const timer = setInterval(() => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  }, 5000);
+  return () => clearInterval(timer);
+}, []);
+
+// Functions for arrow buttons
+const prevTestimonial = () => {
+  setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+};
+
+const nextTestimonial = () => {
+  setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+};
+
+
+
+
   const teamMembers = [
     {
       id: 1,
@@ -295,17 +338,24 @@ const About = () => {
               </div>
             </div>
             <div className="choose-testimonial">
-              <div className="testimonial-card">
-                <FaQuoteLeft className="quote-icon" />
-                <p>
-                  "Aceattorn Legal Solutions handled our trademark infringement case with professionalism and expertise. Their clear guidance and strong strategies safeguarded our brand."
-                </p>
-                <div className="testimonial-author">
-                  <strong>Sanket Shikhar</strong>
-                  <span>A2G Lifecare India Private Limited</span>
-                </div>
-              </div>
-            </div>
+  <button className="arrow left-arrow" onClick={prevTestimonial}>
+    <FaChevronLeft />
+  </button>
+
+  <div className="testimonial-card">
+    <FaQuoteLeft className="quote-icon" />
+    <p>{testimonials[currentTestimonial].quote}</p>
+    <div className="testimonial-author">
+      <strong>{testimonials[currentTestimonial].author}</strong>
+      <span>{testimonials[currentTestimonial].company}</span>
+    </div>
+  </div>
+
+  <button className="arrow right-arrow" onClick={nextTestimonial}>
+    <FaChevronRight />
+  </button>
+</div>
+
           </div>
         </div>
       </section>
