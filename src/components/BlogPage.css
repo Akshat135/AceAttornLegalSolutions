@@ -365,35 +365,46 @@
 
 /*newsletter*/
 
+/* Newsletter container */
 .newsletter-feed {
   margin: 40px auto;
   padding: 20px;
-  max-width: 900px;              /* keeps it centered like blogs */
+  max-width: 900px;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  overflow-x: auto; /* allow horizontal scroll if needed */
-  position:relative;
-  box-sizing:border-box;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
+/* Heading */
 .newsletter-heading {
   text-align: center;
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #0077b5; /* LinkedIn blue */
+  color: #0077b5;
 }
 
-/* Keep widget responsive */
+/* Widget scaling wrapper */
 .newsletter-feed rssapp-carousel {
   display: block;
   width: 100%;
-  max-width:none;
-  margin:0;
-  min-height: 400px; /* fallback */
+  transform-origin: top left;
+}
 
-  box-sizing: border-box;
+/* Auto shrink only on small screens */
+@media (max-width: 768px) {
+  .newsletter-feed rssapp-carousel {
+    transform: scale(0.85);   /* shrink to fit */
+    width: 118%;              /* counterbalance scaling */
+  }
+}
 
+@media (max-width: 480px) {
+  .newsletter-feed rssapp-carousel {
+    transform: scale(0.75);   /* smaller shrink for narrow phones */
+    width: 135%;              /* balance scaling */
+  }
 }
