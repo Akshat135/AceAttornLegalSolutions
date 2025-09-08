@@ -126,7 +126,8 @@ export default function BlogPage() {
       {/* 📸 Instagram Carousel Feed Section */}
       <div className="instagram-feed">
         <h2 className="instagram-heading">Our Social Media Updates</h2>
-        <div data-key="Carousel Instagram Feed" className="ft" id="ftsrc5wuk" style={{ minHeight: '500px' }}></div>
+        <rssinsta-carousel id="ftsrc5wuk" style={{minHeight:'500px'}}></rssinsta-carousel>
+        {/* <div data-key="Carousel Instagram Feed" className="ft" id="ftsrc5wuk" style={{ minHeight: '500px' }}></div> */}
       </div>
     </div>
   );

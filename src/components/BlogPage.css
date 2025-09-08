@@ -321,8 +321,8 @@
   }
 }
 .instagram-feed {
-  margin-top: 60px;
-  padding: 30px;
+  margin-top: 0px;
+  padding: 0px;
   background-color: #f0f8ff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -345,7 +345,7 @@
   width: 100%;
   overflow-x: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: center;  
 }
 
 /* Make the embedded Instagram widget responsive */
