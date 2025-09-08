@@ -404,7 +404,7 @@
 
 @media (max-width: 480px) {
   .newsletter-feed rssapp-carousel {
-    transform: scale(0.75);   /* smaller shrink for narrow phones */
+    transform: scale(0.75) translateX(-3%);   /* smaller shrink for narrow phones */
     width: 135%;              /* balance scaling */
   }
 }
