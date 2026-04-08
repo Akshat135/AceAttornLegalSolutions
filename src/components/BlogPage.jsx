@@ -48,17 +48,17 @@ export default function BlogPage() {
   }, []);
 
   // ✅ LinkedIn Newsletter script (RSS.app)
-  useEffect(() => {
-    const oldScript = document.querySelector("script[src='https://widget.rss.app/v1/carousel.js']");
-    if (oldScript) oldScript.remove();
+  // useEffect(() => {
+  //   const oldScript = document.querySelector("script[src='https://widget.rss.app/v1/carousel.js']");
+  //   if (oldScript) oldScript.remove();
 
-    const script = document.createElement("script");
-    script.src = "https://widget.rss.app/v1/carousel.js";
-    script.async = true;
-    document.body.appendChild(script);
+  //   const script = document.createElement("script");
+  //   script.src = "https://widget.rss.app/v1/carousel.js";
+  //   script.async = true;
+  //   document.body.appendChild(script);
 
-    return () => script.remove();
-  }, []);
+  //   return () => script.remove();
+  // }, []);
 
   // Blog actions
   // const addBlog = () => {
@@ -118,10 +118,10 @@ export default function BlogPage() {
       )} */}
 
       {/* ✅ LinkedIn Newsletter Embed Section */}
-      <div className="newsletter-feed">
+      {/* <div className="newsletter-feed">
         <h2 className="newsletter-heading">📩 Our LinkedIn Newsletter</h2>
         <rssapp-carousel id="N6ApjSEILWbA4uXN"></rssapp-carousel>
-      </div>
+      </div> */}
 
       {/* 📸 Instagram Carousel Feed Section */}
       <div className="instagram-feed">
