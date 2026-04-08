@@ -68,7 +68,7 @@ const Header = () => {
               <Link to="/" className="logo-link">
                 <img src={logo} alt="Ace Attorn Logo" className="logo-img" />
                 <div className="logo-text">
-                  <h1>Ace Attorn Legal Solutions</h1>
+                  <h1>AceAttorn Legal Solutions</h1>
                   <span className="tagline">Innovative Legal Solutions for Modern Businesses</span>
                 </div>
               </Link>

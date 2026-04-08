@@ -70,8 +70,8 @@ const nextTestimonial = () => {
     {
       id: 2,
       name: "Advocate Rudhira Patil",
-      position: "trademark Attorney & Legal Associate",
-      education: "M.Coom, LL.B.",
+      position: "Trademark Attorney & Legal Associate",
+      education: "M.Com, LL.B.",
       experience: "2 Years",
       specialization: "Trademark Law",
       image:f2,
