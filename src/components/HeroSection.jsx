@@ -94,7 +94,7 @@ const HeroSection = () => {
                     <FaPhone className="btn-icon" />
                     Free Consultation
                   </Link>
-                  <Link to="/about" className="btn btn-secondary hero-btn">
+                  <Link to="/about-us" className="btn btn-secondary hero-btn">
                     Learn More
                     <FaArrowRight className="btn-icon" />
                   </Link>

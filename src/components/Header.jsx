@@ -20,8 +20,8 @@ const Header = () => {
 
   const navigationItems = [
     { title: 'Home', to: '/' },
-    { title: 'About Us', to: '/about' },
-    { title: 'Blogs', to: '/blog' },
+    { title: 'About Us', to: '/about-us' },
+    { title: 'Blogs', to: '/blogs' },
     {
       title: 'Services',
       to: '/#services',

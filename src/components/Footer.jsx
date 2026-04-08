@@ -34,8 +34,8 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { title: "About Us", to: "/about" },
-    { title: "Blogs", to: "/blog" },
+    { title: "About Us", to: "/about-us" },
+    { title: "Blogs", to: "/blogs" },
     { title: "Contact", to: "/contact" },
   ];
 

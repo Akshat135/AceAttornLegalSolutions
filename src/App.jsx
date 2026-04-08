@@ -27,9 +27,9 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HeroSection />} />
-            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blogs" element={<BlogPage />} />
             <Route path="/contact" element={<Contact/>} />
-            <Route path="/about" element={<About/>} />
+            <Route path="/about-us" element={<About/>} />
             <Route path="/trademark" element={<Trademark/>}/>
             <Route path="/copyright" element={<Copyright/>}/>
             <Route path="/patent" element={<Patent/>}/>
