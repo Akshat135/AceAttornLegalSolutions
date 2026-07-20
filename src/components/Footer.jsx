@@ -54,7 +54,7 @@ const Footer = () => {
                 </p>
               </div>
               <p className="footer-description">
-                Welcome to AceAttorn Legal Solutions, your trusted partner in
+                Welcome to AceAttorn IP Associates & Legal Solutions, your trusted partner in
                 navigating the intricate realms of Intellectual Property Rights
                 (IPR) and Contractual Management.
               </p>
@@ -119,6 +119,7 @@ const Footer = () => {
               <h4 className="footer-heading">Contact Information</h4>
               <div className="contact-details">
                 <div className="contact-detail">
+                  <div>
                   <FaMapMarkerAlt className="contact-icon" />
                   <div>
                     <a
@@ -126,9 +127,21 @@ const Footer = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>L 99, V.D.A Colony Shivpur</p>
-                      <p>Varanasi, Uttar Pradesh 221003</p>
+                      <p>CP - 13/1, near Community Health Centre (Bal Mahila Chikitsalay), Sector CS, Aliganj, Lucknow, Uttar Pradesh 226024</p>
                     </a>
+                    </div>
+                    </div>
+                    <div>
+                    <FaMapMarkerAlt className="contact-icon" />
+                    <div>
+                    <a
+                      href="https://www.google.com/maps/place/AceAttorn+Legal+Solutions/@25.3578563,82.9783862,17z/data=!3m1!4b1!4m6!3m5!1s0x6ba254da2cf86e55:0xd747fcbb3034aba1!8m2!3d25.3578563!4d82.9783862!16s%2Fg%2F11xmd190my?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <p>L 99, V.D.A Colony Shivpur, Varanasi, Uttar Pradesh 221003</p>
+                    </a>
+                  </div>
                   </div>
                 </div>
 

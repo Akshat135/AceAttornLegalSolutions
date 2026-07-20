@@ -103,7 +103,7 @@ const HeroSection = () => {
                {/* <div className="hero-contact-info">
                   <div className="contact-item">
                     <FaPhone className="contact-icon" />
-                    <span>+91 98765 43210</span>
+                    <span>+91 7379902583</span>
                   </div>
                   <div className="contact-item">
                     <FaEnvelope className="contact-icon" />

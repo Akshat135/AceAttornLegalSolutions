@@ -58,10 +58,10 @@ const Contact = () => {
     {
       icon: <FaMapMarkerAlt />,
       title: 'Our Address',
-      details: [
-        'L 99, V.D.A Colony Shivpur',
-'       Varanasi, Uttar Pradesh  221003'
-      ]
+      details: {
+        Lucknow: 'CP - 13/1, near Community Health Centre (Bal Mahila Chikitsalay), Sector CS, Aliganj, Lucknow, Uttar Pradesh 226024',
+        Varanasi: 'L 99, V.D.A Colony Shivpur, Varanasi, Uttar Pradesh  221003'
+      }
     },
     {
       icon: <FaPhone />,
@@ -91,23 +91,21 @@ const Contact = () => {
 
   const officeLocations = [
     {
-      name: 'Office',
+      name: 'Lucknow',
+      address: 'CP - 13/1, near Community Health Centre (Bal Mahila Chikitsalay), Sector CS, Aliganj, Lucknow, Uttar Pradesh 226024',
+      phone: '+91 7379902583',
+      specialties: ['Intellectual Property Rights', 'Licenses & Agreements', 'Company Incorporation', 'IP Strategy & Advisory', 'IP Enforcement'],
+      location: 'https://www.google.com/maps/place/AceAttorn+IP+Associates+%26+Legal+Solutions/data=!4m2!3m1!1s0x0:0x125e4995f556ecda?sa=X&ved=1t:2428&ictx=111'
+    },
+    {
+      name: 'Varanasi',
       address: 'L 99, V.D.A Colony Shivpur Varanasi, State 221003',
-      phone: '+91 98765 43210',
-      specialties: ['Corporate Law', 'Civil Litigation', 'Real Estate Law']
+      phone: '+91 7379902583',
+      specialties: ['Intellectual Property Rights', 'Licenses & Agreements', 'Company Incorporation', 'IP Strategy & Advisory', 'IP Enforcement'],
+      location: 'https://www.google.com/maps/place/AceAttorn+Legal+Solutions/@25.3578611,82.9758113,17z/data=!3m1!4b1!4m6!3m5!1s0x6ba254da2cf86e55:0xd747fcbb3034aba1!8m2!3d25.3578563!4d82.9783862!16s%2Fg%2F11xmd190my?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D'
+
     }
-    // {
-    //   name: 'Pune Branch Office',
-    //   address: '456 Law Avenue, Pune 411001',
-    //   phone: '+91 98765 43213',
-    //   specialties: ['Family Law', 'Property Disputes', 'Employment Law']
-    // },
-    // {
-    //   name: 'Nashik Branch Office',
-    //   address: '789 Justice Road, Nashik 422001',
-    //   phone: '+91 98765 43214',
-    //   specialties: ['Criminal Law', 'Consumer Protection', 'Tax Law']
-    // }
+
   ];
 
   const legalAreas = [
@@ -221,7 +219,13 @@ const Contact = () => {
                     <div className="contact-icon">{info.icon}</div>
                     <div className="contact-details">
                       <h3>{info.title}</h3>
-                      {info.details.map((d, j) => <p key={j}>{d}</p>)}
+                      {
+                        Array.isArray(info.details) ? info.details.map((detail, j) => <p key={j}>{detail}</p>)
+                          : Object.keys(info.details).map((city, i) => <div marginBottom='25px'>
+                            <h3>{city}</h3>
+                            <p key={i}>{info.details[city]}</p>
+                          </div>)
+                      }
                     </div>
                   </div>
                 ))}
@@ -240,8 +244,23 @@ const Contact = () => {
           <div className="locations-grid">
             {officeLocations.map((office, i) => (
               <div key={i} className="location-card">
-                <h3>{office.name}</h3>
-                <p className="address"><FaMapMarkerAlt className="location-icon" /> {office.address}</p>
+                <div className='location-header'>
+                  <h3>{office.name}</h3><a
+                    href= {office.location}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    View on Google Maps
+                  </a>
+                </div>
+                <p className="address"><FaMapMarkerAlt className="location-icon" />
+                  <a
+                    href="https://www.google.com/maps/place/AceAttorn+Legal+Solutions/@25.3578611,82.9758113,17z/data=!3m1!4b1!4m6!3m5!1s0x6ba254da2cf86e55:0xd747fcbb3034aba1!8m2!3d25.3578563!4d82.9783862!16s%2Fg%2F11xmd190my?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {office.address}                </a></p>
                 <p className="phone"><FaPhone className="location-icon" /> {office.phone}</p>
                 <div className="specialties">
                   <h4>Specialties:</h4>
@@ -250,6 +269,27 @@ const Contact = () => {
                       <span key={j} className="specialty-tag">{spec}</span>
                     ))}
                   </div>
+                  {/* <div className="container"> */}
+                  {/* <h2>Find Us on Map</h2> */}
+                  {/* <div className="map-container"> */}
+                  {/* <div className="map-placeholder">
+              <div className="map-content"> */}
+                  {/* <FaMapMarkerAlt className="map-icon" /> */}
+                  {/* <h3>AceAttorn IP Associates & Legal Solutions</h3>
+                <p>L 99, V.D.A Colony Shivpur</p>
+                <p>Varanasi, Uttar Pradesh 221003</p> */}
+                  {/* <a
+                  href="https://www.google.com/maps/place/AceAttorn+Legal+Solutions/@25.3578611,82.9758113,17z/data=!3m1!4b1!4m6!3m5!1s0x6ba254da2cf86e55:0xd747fcbb3034aba1!8m2!3d25.3578563!4d82.9783862!16s%2Fg%2F11xmd190my?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  View on Google Maps
+                </a> */}
+                  {/* </div> */}
+                  {/* </div> */}
+                  {/* </div> */}
+                  {/* </div> */}
                 </div>
               </div>
             ))}
@@ -258,14 +298,14 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="map-section">
+      {/* <section className="map-section">
         <div className="container">
           <h2>Find Us on Map</h2>
           <div className="map-container">
             <div className="map-placeholder">
               <div className="map-content">
                 <FaMapMarkerAlt className="map-icon" />
-                <h3>AceAttorn Legal Solutions</h3>
+                <h3>AceAttorn IP Associates & Legal Solutions</h3>
                 <p>L 99, V.D.A Colony Shivpur</p>
                 <p>Varanasi, Uttar Pradesh 221003</p>
                 <a
@@ -280,7 +320,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Emergency Contact */}
       {/* <section className="emergency-contact section">

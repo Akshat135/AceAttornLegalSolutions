@@ -171,7 +171,7 @@ const nextTestimonial = () => {
             <div className="story-text">
               <h2>Our Story</h2>
               <p>
-                Welcome to AceAttorn Legal Solutions, your trusted partner in
+                Welcome to AceAttorn IP Associates & Legal Solutions, your trusted partner in
                 navigating the intricate realms of Intellectual Property Rights
                 (IPR) and Contractual Management. </p>
                 <p>Our dedicated team of legal

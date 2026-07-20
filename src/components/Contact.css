@@ -45,7 +45,7 @@
   max-width: 100%;
   width: 90%;
   margin: 0 auto;
-  padding:0 20px
+  padding: 0 20px
 }
 
 .hero-content h1 {
@@ -268,6 +268,10 @@
   margin-bottom: 0;
 }
 
+.contact-details div {
+  margin-bottom: 25px
+}
+
 /* Office Locations */
 .office-locations {
   background: var(--e-global-color-white);
@@ -299,6 +303,44 @@
   color: var(--e-global-color-dark);
 }
 
+.location-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.location-card .btn {
+  margin-left: auto;
+  padding: 6px 12px;
+  /* Smaller padding */
+  font-size: 14px;
+  /* Smaller text */
+  line-height: 1.2;
+  white-space: nowrap;
+  /* Prevents text wrapping */
+}
+
+.location-card>div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Vertically aligns h3 and button */
+  width: 100%;
+}
+
+.location-card>div:first-child h3 {
+  margin: 0;
+}
+
+.location-card>div:first-child .btn {
+  margin-left: auto;
+  padding: 4px 10px;
+  font-size: 13px;
+  line-height: 1;
+}
+
 .location-info {
   margin-bottom: 25px;
 }
@@ -316,6 +358,31 @@
   color: var(--e-global-color-primary);
   font-size: 16px;
   width: 16px;
+}
+
+
+.address {
+    display: flex;
+    align-items: flex-start;   /* Use center if you want perfect vertical centering */
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.address .location-icon {
+    flex-shrink: 0;
+    margin-top: 3px;           /* Fine-tune alignment with text */
+    font-size: 16px;
+}
+
+.address a {
+    color: #000;
+    text-decoration: none;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.address a:hover {
+    color: #0d6efd !important; /* Replace with your preferred color */
 }
 
 .specialties h4 {
@@ -412,7 +479,7 @@
   color: var(--e-global-color-white);
 }
 
-.emergency-content > p {
+.emergency-content>p {
   font-size: 1.2rem;
   margin-bottom: 40px;
   color: rgba(255, 255, 255, 0.9);
@@ -581,7 +648,7 @@
     font-size: 1.5rem;
   }
 
-  .emergency-content > p {
+  .emergency-content>p {
     font-size: 1rem;
   }
 
@@ -620,9 +687,10 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
- 
+
   }
 }
